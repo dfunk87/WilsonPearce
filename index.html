@@ -1,0 +1,461 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Wilson and Pearce Entertainment: a live vocal duo for weddings, parties and events. Swing, soul, Motown and pop in close harmony.">
+<meta property="og:title" content="Wilson and Pearce Entertainment">
+<meta property="og:description" content="Two voices. One very good night.">
+<title>Wilson and Pearce Entertainment</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;500;600&display=swap">
+<style>
+  /* Layout concept: a Saturday-night record sleeve. Crisp white and ice blue with one electric cobalt and a midnight section for contrast. Heavy poster type, a spinning vinyl, a tilted genre ticker, and chunky outlined cards with hard blue shadows. */
+  :root{
+    --white:#FFFFFF;
+    --snow:#F2F8FF;
+    --ice:#CFE6FB;
+    --glacier:#8EC5F2;
+    --cyan:#79D6FA;
+    --cobalt:#1F6FEB;
+    --ink:#0B1F3A;
+    --muted:#4A6382;
+    --font-display:'Bricolage Grotesque','Arial Black','Segoe UI',system-ui,sans-serif;
+    --font-flair:'Instrument Serif','Iowan Old Style',Georgia,serif;
+    --font-body:'Figtree','Avenir Next','Segoe UI',system-ui,sans-serif;
+    --gutter:clamp(16px,4vw,40px);
+    color-scheme:light;
+  }
+  *,*::before,*::after{ box-sizing:border-box; }
+  html{ scroll-behavior:smooth; }
+  body{ background:var(--white); color:var(--ink); font-family:var(--font-body); font-size:17px; line-height:1.65; -webkit-font-smoothing:antialiased; }
+  h1,h2,h3{ font-family:var(--font-display); font-weight:800; letter-spacing:-0.03em; line-height:0.95; margin:0; text-wrap:balance; }
+  h2{ font-size:clamp(40px,6.4vw,84px); }
+  em{ font-family:var(--font-flair); font-style:italic; font-weight:400; letter-spacing:-0.01em; color:var(--cobalt); }
+  p{ margin:0; text-wrap:pretty; }
+  ul,ol,dl,dd{ list-style:none; margin:0; padding:0; }
+  a{ color:inherit; text-decoration:none; }
+  :focus-visible{ outline:3px solid var(--cobalt); outline-offset:3px; border-radius:4px; }
+  .wrap{ max-width:1200px; margin-inline:auto; padding-inline:var(--gutter); }
+  .kicker{ font-size:13px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--cobalt); margin-bottom:18px; }
+  .fine{ font-size:14.5px; color:var(--muted); }
+
+  .ph{ background:var(--ice); padding:0.05em 0.3em; border-radius:4px; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  .draft-note{ background:var(--ink); color:var(--white); font-size:13px; text-align:center; padding:8px var(--gutter); line-height:1.5; }
+  .draft-note .ph{ background:var(--cyan); color:var(--ink); }
+
+  /* Header */
+  .site-header{ position:sticky; top:env(safe-area-inset-top,0px); z-index:30; background:var(--white); border-bottom:2px solid var(--ink); }
+  .bar{ display:flex; align-items:center; justify-content:space-between; gap:16px; padding-block:12px; }
+  .brand{ display:flex; align-items:center; gap:12px; min-width:0; }
+  .disc{ width:34px; height:34px; border-radius:50%; flex-shrink:0;
+    background:radial-gradient(circle,var(--cobalt) 0 22%,var(--white) 23% 30%,transparent 31%),repeating-radial-gradient(circle,var(--ink) 0 2px,#1b3a63 2px 4px); }
+  .brand-text{ display:flex; flex-direction:column; gap:3px; }
+  .brand-name{ font-family:var(--font-display); font-weight:800; font-size:23px; letter-spacing:-0.03em; line-height:1; white-space:nowrap; }
+  .brand-name em{ font-size:1.15em; padding-inline:0.06em; }
+  .brand-sub{ font-size:9.5px; font-weight:600; letter-spacing:0.36em; text-transform:uppercase; color:var(--muted); line-height:1; }
+  nav ul{ display:flex; align-items:center; gap:30px; }
+  nav a{ font-size:15px; font-weight:600; transition:color .2s ease; }
+  nav a:hover{ color:var(--cobalt); }
+  nav a.nav-cta{ background:var(--cobalt); color:var(--white); border-radius:999px; padding:10px 22px; transition:background-color .2s ease; }
+  nav a.nav-cta:hover{ background:var(--ink); color:var(--white); }
+  .menu-btn{ display:none; font:600 14px/1 var(--font-body); color:var(--white); background:var(--cobalt); border:0; border-radius:999px; padding:11px 20px; cursor:pointer; }
+
+  .btn{ display:inline-flex; align-items:center; justify-content:center; padding:17px 34px; border-radius:999px; border:2px solid var(--ink);
+    font:700 16px/1 var(--font-display); letter-spacing:-0.01em; cursor:pointer; transition:transform .15s ease, box-shadow .15s ease; }
+  .btn-solid{ background:var(--cobalt); color:var(--white); box-shadow:4px 4px 0 var(--ink); }
+  .btn-solid:hover{ transform:translate(-2px,-2px); box-shadow:6px 6px 0 var(--ink); }
+  .btn-solid:active{ transform:translate(2px,2px); box-shadow:2px 2px 0 var(--ink); }
+  .link{ font-weight:600; border-bottom:2px solid var(--cobalt); padding-bottom:2px; transition:color .2s ease; }
+  .link:hover{ color:var(--cobalt); }
+  .actions{ display:flex; flex-wrap:wrap; align-items:center; gap:18px 30px; }
+
+  /* Hero */
+  .hero{ position:relative; overflow-x:clip; isolation:isolate; padding-block:clamp(40px,6vw,84px) clamp(64px,8vw,104px); }
+  .hero::before{ content:""; position:absolute; z-index:-1; inset:0 0 0 35%;
+    background:radial-gradient(closest-side at 60% 48%,var(--ice),rgba(207,230,251,0) 78%); }
+  .hero-grid{ display:grid; grid-template-columns:minmax(0,1.05fr) minmax(0,0.95fr); gap:clamp(28px,5vw,64px); align-items:center; }
+  .hero-copy{ min-width:0; }
+  .hero h1{ font-size:clamp(54px,8.6vw,120px); margin-bottom:28px; }
+  .lede{ font-size:20px; max-width:42ch; margin-bottom:36px; color:var(--muted); }
+  .lede b{ color:var(--ink); font-weight:600; }
+
+  .art{ position:relative; width:100%; max-width:540px; margin-inline:auto; aspect-ratio:1/1; min-width:0; }
+  .vinyl{ position:absolute; right:0; top:0; width:88%; aspect-ratio:1; border-radius:50%;
+    background:
+      radial-gradient(circle,#fff 0 3%,transparent 3.5%),
+      radial-gradient(circle,var(--cobalt) 0 21%,var(--white) 21.6% 24%,transparent 24.6%),
+      conic-gradient(from 20deg,rgba(121,214,250,0) 0 8%,rgba(121,214,250,0.5) 12%,rgba(121,214,250,0) 18% 58%,rgba(121,214,250,0.5) 62%,rgba(121,214,250,0) 68%),
+      repeating-radial-gradient(circle,var(--ink) 0 2px,#17345c 2px 4px);
+    box-shadow:10px 10px 0 var(--glacier);
+    animation:spin 14s linear infinite; }
+  .vinyl span{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center;
+    font-family:var(--font-flair); font-style:italic; font-size:clamp(22px,4.4vw,40px); color:var(--white); transform:translateY(-3%); }
+  .pic{ position:absolute; width:41%; aspect-ratio:1; border-radius:50%; border:4px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; text-align:center;
+    font-family:var(--font-flair); font-style:italic; font-size:clamp(70px,12vw,120px); line-height:1; color:var(--white);
+    box-shadow:6px 6px 0 var(--cobalt); animation:bob 6s ease-in-out infinite; }
+  .pic small{ position:absolute; bottom:15%; font-family:var(--font-body); font-style:normal; font-size:10.5px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--ink); }
+  .pic img{ position:absolute; inset:0; width:100%; height:100%; border-radius:50%; object-fit:cover; display:block; }
+  .pic-a{ left:0; bottom:2%; background:linear-gradient(160deg,var(--cyan),var(--glacier)); }
+  .pic-b{ left:43%; bottom:-4%; background:linear-gradient(160deg,#4C97F5,var(--cobalt)); animation-delay:-3s; }
+  .pic-b small{ color:var(--white); }
+  .sticker{ position:absolute; left:2%; top:3%; width:27%; aspect-ratio:1; border-radius:50%; background:var(--cyan); border:3px solid var(--ink);
+    display:flex; align-items:center; justify-content:center; text-align:center; transform:rotate(-12deg);
+    font-family:var(--font-display); font-weight:800; font-size:clamp(13px,2.2vw,20px); line-height:1.05; letter-spacing:-0.01em; z-index:2; }
+  @keyframes spin{ to{ transform:rotate(360deg); } }
+  @keyframes bob{ 0%,100%{ transform:translateY(0); } 50%{ transform:translateY(-8px); } }
+
+  /* Ticker */
+  .ticker-wrap{ overflow:hidden; padding-block:14px; }
+  .ticker{ background:var(--cobalt); color:var(--white); border-block:2px solid var(--ink); transform:rotate(-1.4deg); margin-inline:-3%; overflow:hidden; }
+  .ticker-track{ display:flex; width:max-content; animation:slide 28s linear infinite; }
+  .ticker ul{ display:flex; align-items:center; gap:26px; padding:14px 13px; flex-shrink:0; }
+  .ticker li{ font-family:var(--font-display); font-weight:800; font-size:clamp(20px,3vw,30px); letter-spacing:-0.01em; text-transform:uppercase; white-space:nowrap; }
+  .ticker svg{ width:20px; height:20px; fill:var(--cyan); display:block; }
+  @keyframes slide{ to{ transform:translateX(-50%); } }
+
+  .section{ padding-block:clamp(64px,9vw,128px); }
+  section[id]{ scroll-margin-top:64px; }
+
+  /* Evening (midnight) */
+  .night{ position:relative; background:var(--ink); color:var(--white); overflow:hidden; isolation:isolate; }
+  .night::before{ content:""; position:absolute; z-index:-1; width:70vw; max-width:900px; aspect-ratio:1; border-radius:50%; right:-18%; top:-30%;
+    background:radial-gradient(closest-side,rgba(31,111,235,0.55),rgba(31,111,235,0)); }
+  .night .kicker{ color:var(--cyan); }
+  .night em{ color:var(--cyan); }
+  .evening-grid{ display:grid; grid-template-columns:minmax(0,0.8fr) minmax(0,1.2fr); gap:clamp(32px,6vw,88px); align-items:start; }
+  .evening-intro{ min-width:0; position:sticky; top:96px; }
+  .evening-intro p{ margin-top:22px; color:#B9D3EE; max-width:34ch; }
+  .evening-intro .fine{ color:#B9D3EE; }
+  .night .ph{ background:rgba(121,214,250,0.2); color:var(--white); }
+  .run{ min-width:0; }
+  .run li{ display:grid; grid-template-columns:minmax(0,150px) minmax(0,1fr); gap:6px 24px; padding-block:30px; border-top:2px solid rgba(121,214,250,0.35); }
+  .run li:last-child{ border-bottom:2px solid rgba(121,214,250,0.35); }
+  .run time{ font-family:var(--font-display); font-weight:800; font-size:clamp(46px,6vw,72px); line-height:0.9; letter-spacing:-0.04em; color:var(--cyan); font-variant-numeric:lining-nums tabular-nums; }
+  .run h3{ font-size:clamp(28px,3.4vw,38px); margin-bottom:8px; }
+  .run p{ color:#B9D3EE; max-width:46ch; }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; margin-top:14px; }
+  .tags span{ font-size:13px; font-weight:600; color:var(--white); border:2px solid var(--cyan); border-radius:999px; padding:4px 14px; }
+
+  /* Us */
+  .us-head{ max-width:700px; margin-bottom:clamp(40px,6vw,72px); }
+  .us-head p{ margin-top:20px; color:var(--muted); max-width:44ch; }
+  .us-grid{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:clamp(28px,5vw,64px); }
+  .pop{ background:var(--white); border:2px solid var(--ink); border-radius:28px; box-shadow:9px 9px 0 var(--glacier); }
+  .who{ padding:clamp(24px,3.5vw,40px); min-width:0; display:flex; flex-direction:column; gap:14px; }
+  .who:nth-child(2){ box-shadow:9px 9px 0 var(--cobalt); }
+  .who h3{ font-size:clamp(80px,13vw,176px); line-height:0.8; text-transform:uppercase; letter-spacing:-0.05em; }
+  .who.a h3{ color:var(--cobalt); }
+  .role{ font-size:12.5px; font-weight:600; letter-spacing:0.2em; text-transform:uppercase; color:var(--muted); }
+  .who .bio{ max-width:44ch; }
+  .qa{ margin-top:6px; }
+  .qa div{ padding-block:14px; border-top:2px solid var(--ice); }
+  .qa dt{ font-size:12px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--cobalt); margin-bottom:3px; }
+  .qa dd{ color:var(--muted); }
+
+  /* Listen */
+  .listen{ background:var(--snow); border-block:2px solid var(--ink); }
+  .listen-grid{ display:grid; grid-template-columns:minmax(0,1.1fr) minmax(0,0.9fr); gap:clamp(32px,6vw,80px); align-items:center; }
+  .video{ position:relative; aspect-ratio:16/10; max-width:100%; overflow:hidden; display:flex; align-items:center; justify-content:center;
+    background:radial-gradient(circle at 20% 15%,var(--cyan),rgba(121,214,250,0) 55%),linear-gradient(140deg,#4C97F5,var(--cobalt)); }
+  .play{ width:96px; height:96px; border-radius:50%; background:var(--white); border:3px solid var(--ink); box-shadow:5px 5px 0 var(--ink); display:flex; align-items:center; justify-content:center; }
+  .play svg{ width:28px; height:28px; margin-left:6px; }
+  .play path{ fill:var(--cobalt); }
+  .video p{ position:absolute; inset:auto 0 18px; text-align:center; padding-inline:16px; font-size:13px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; color:var(--white); }
+  .listen-copy{ min-width:0; }
+  .listen-copy > p{ margin-top:18px; color:var(--muted); }
+  .songs{ margin-top:24px; }
+  .songs li{ padding-block:13px; border-top:2px solid var(--ice); font-family:var(--font-display); font-weight:700; font-size:22px; letter-spacing:-0.02em; line-height:1.2; }
+  .songs li:last-child{ border-bottom:2px solid var(--ice); }
+
+  /* Kind words */
+  .words{ background:var(--ice); border-bottom:2px solid var(--ink); position:relative; overflow:hidden; }
+  .words-in{ position:relative; max-width:900px; }
+  .words-in::before{ content:"\201C"; position:absolute; left:-0.04em; top:-0.32em; font-family:var(--font-display); font-weight:800; font-size:clamp(160px,24vw,300px); line-height:1; color:var(--cobalt); opacity:0.9; }
+  .words blockquote{ position:relative; margin:0 0 22px; padding-top:clamp(70px,10vw,120px); font-family:var(--font-flair); font-style:italic; font-size:clamp(32px,5vw,58px); line-height:1.1; }
+  .words figcaption{ font-size:13px; font-weight:600; letter-spacing:0.16em; text-transform:uppercase; }
+  .words .ph{ background:rgba(255,255,255,0.7); }
+
+  /* Hello */
+  .hello-grid{ display:grid; grid-template-columns:minmax(0,0.85fr) minmax(0,1.15fr); gap:clamp(32px,6vw,88px); align-items:start; }
+  .hello-info{ min-width:0; }
+  .hello-info .lead{ margin-top:22px; color:var(--muted); max-width:36ch; }
+  .contact{ margin-top:30px; display:grid; gap:14px; }
+  .contact div{ display:flex; flex-direction:column; gap:2px; }
+  .contact dt{ font-size:12px; font-weight:600; letter-spacing:0.18em; text-transform:uppercase; color:var(--cobalt); }
+  .form-card{ padding:clamp(22px,3.5vw,40px); min-width:0; box-shadow:9px 9px 0 var(--cobalt); }
+  form{ display:grid; gap:22px; }
+  .row2{ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:22px; }
+  .field{ display:flex; flex-direction:column; gap:6px; min-width:0; }
+  label{ font-size:12px; font-weight:600; letter-spacing:0.14em; text-transform:uppercase; color:var(--muted); }
+  input,select,textarea{ width:100%; font:inherit; font-size:17px; color:var(--ink); background:var(--snow); border:2px solid var(--ink); border-radius:14px; padding:12px 14px; }
+  select{ appearance:none; -webkit-appearance:none; cursor:pointer; padding-right:36px;
+    background-image:linear-gradient(45deg,transparent 50%,var(--ink) 50%),linear-gradient(135deg,var(--ink) 50%,transparent 50%);
+    background-position:calc(100% - 20px) 55%,calc(100% - 15px) 55%; background-size:5px 5px,5px 5px; background-repeat:no-repeat; }
+  input:focus,select:focus,textarea:focus{ outline:none; border-color:var(--cobalt); box-shadow:0 0 0 4px var(--ice); }
+  textarea{ resize:vertical; min-height:110px; }
+  .form-foot{ display:flex; flex-wrap:wrap; align-items:center; gap:16px 22px; }
+  #form-status{ font-size:14.5px; color:var(--muted); flex:1 1 220px; min-width:0; }
+
+  /* Footer */
+  footer{ background:var(--ink); color:var(--white); padding-block:clamp(48px,7vw,88px) 36px; overflow:hidden; }
+  .big-name{ font-family:var(--font-display); font-weight:800; font-size:clamp(46px,11.5vw,168px); line-height:0.9; letter-spacing:-0.05em; margin-bottom:36px; }
+  .big-name em{ color:var(--cyan); font-size:1.05em; }
+  .footer-row{ display:flex; flex-wrap:wrap; justify-content:space-between; gap:14px 32px; border-top:2px solid rgba(121,214,250,0.35); padding-top:24px; }
+  .footer-links{ display:flex; flex-wrap:wrap; gap:8px 26px; }
+  .footer-links a{ font-size:15px; font-weight:600; color:#B9D3EE; }
+  .footer-links a:hover{ color:var(--white); }
+  .legal{ font-size:13.5px; color:#B9D3EE; }
+
+  @media (max-width:900px){
+    .hero-grid,.evening-grid,.listen-grid,.hello-grid{ grid-template-columns:minmax(0,1fr); }
+    .evening-intro{ position:static; }
+    .art{ max-width:460px; }
+  }
+  @media (max-width:760px){
+    .menu-btn{ display:inline-block; }
+    nav ul{ display:none; position:absolute; top:100%; left:0; right:0; flex-direction:column; align-items:flex-start; gap:20px; background:var(--white); border-bottom:2px solid var(--ink); padding:22px var(--gutter) 28px; }
+    nav ul.open{ display:flex; }
+    nav a{ font-size:19px; }
+    .us-grid{ grid-template-columns:minmax(0,1fr); }
+  }
+  @media (max-width:560px){
+    .row2{ grid-template-columns:minmax(0,1fr); }
+    .brand-name{ font-size:20px; }
+    .run li{ grid-template-columns:minmax(0,1fr); }
+  }
+  @media (prefers-reduced-motion:reduce){
+    html{ scroll-behavior:auto; }
+    .vinyl,.pic,.ticker-track{ animation:none; }
+    *{ transition:none !important; }
+  }
+  html,body{ margin:0; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <symbol id="star" viewBox="0 0 24 24"><path d="M12 0C12 7 17 12 24 12C17 12 12 17 12 24C12 17 7 12 0 12C7 12 12 7 12 0Z"/></symbol>
+</svg>
+
+<p class="draft-note">Design preview. Text highlighted <span class="ph">like this</span> is placeholder copy to replace.</p>
+
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="#top" aria-label="Wilson and Pearce Entertainment, back to top">
+      <span class="disc" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-name">Wilson <em>&amp;</em> Pearce</span>
+        <span class="brand-sub">Entertainment</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="#evening">The night</a></li>
+        <li><a href="#us">Us</a></li>
+        <li><a href="#listen">Listen</a></li>
+        <li><a class="nav-cta" href="#hello">Say hello</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Live vocal duo</p>
+        <h1>Two voices.<br>One <em>very</em> good night.</h1>
+        <p class="lede"><b>Kyle Wilson and Will Pearce</b> sing swing, soul, Motown and pop in close harmony, for weddings, parties and anyone who would rather have live voices than a playlist.</p>
+        <div class="actions">
+          <a class="btn btn-solid" href="#hello">Say hello</a>
+          <a class="link" href="#listen">Hear us sing</a>
+        </div>
+      </div>
+      <div class="art">
+        <div class="vinyl" aria-hidden="true"><span>W&amp;P</span></div>
+        <div class="pic pic-a"><img src="kyle.jpg" alt="Kyle Wilson singing into a microphone"></div>
+        <div class="pic pic-b" role="img" aria-label="Placeholder for a photo of Will Pearce">W<small>Will's photo</small></div>
+        <div class="sticker" aria-hidden="true">Live<br>vocals</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="ticker-wrap" aria-label="Genres: swing, soul, Motown, pop, R and B, musical theatre">
+    <div class="ticker">
+      <div class="ticker-track" aria-hidden="true">
+        <ul>
+          <li>Swing</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Soul</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Motown</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Pop</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>R&amp;B</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Musical theatre</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+        </ul>
+        <ul>
+          <li>Swing</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Soul</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Motown</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Pop</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>R&amp;B</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+          <li>Musical theatre</li><li><svg viewBox="0 0 24 24"><use href="#star"/></svg></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <section class="section night" id="evening">
+    <div class="wrap evening-grid">
+      <div class="evening-intro">
+        <p class="kicker">How it sounds</p>
+        <h2>The night, <em>start to finish.</em></h2>
+        <p>Here is roughly how a wedding day can sound. We plan yours with you, so the music moves with the room.</p>
+        <p class="fine" style="margin-top:18px"><span class="ph">[Example timings. Replace with your own favourite running order.]</span></p>
+      </div>
+      <ol class="run">
+        <li><time>2:30</time><div><h3>The ceremony</h3><p>Something gentle for the walk in, something stirring for the walk out.</p><div class="tags"><span>Ballads</span><span>Musical theatre</span></div></div></li>
+        <li><time>4:30</time><div><h3>Drinks</h3><p>Light, polished and easy to talk over while the champagne goes round.</p><div class="tags"><span>Swing</span><span>Easy jazz</span></div></div></li>
+        <li><time>6:30</time><div><h3>Dinner</h3><p>Gentle songs that sit under the conversation and the speeches.</p><div class="tags"><span>Soul</span><span>Classic pop</span></div></div></li>
+        <li><time>8:00</time><div><h3>First dance</h3><p>Your song, sung to you, with the whole room behind you.</p><div class="tags"><span>Your choice</span></div></div></li>
+        <li><time>9:00</time><div><h3>Dance floor</h3><p>Motown, soul, pop and R&amp;B, with the harmonies turned all the way up.</p><div class="tags"><span>Motown</span><span>R&amp;B</span><span>Pop</span></div></div></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section" id="us">
+    <div class="wrap">
+      <div class="us-head">
+        <p class="kicker">The two of us</p>
+        <h2>Meet Kyle <em>&amp;</em> Will.</h2>
+        <p>Two lead voices who sound better together than apart. Here is a little about each of us.</p>
+      </div>
+      <div class="us-grid">
+        <article class="who b pop">
+          <h3>Kyle</h3>
+          <p class="role">Kyle Wilson &middot; Vocals</p>
+          <p class="bio">Ten years of live singing, with credits including Alexandra Palace, Abbey Road Studios and festivals in Liverpool. <span class="ph">[Add what Kyle brings to the duo.]</span></p>
+          <dl class="qa">
+            <div><dt>First song we sang together</dt><dd><span class="ph">[Kyle's answer]</span></dd></div>
+            <div><dt>The song that always gets the room</dt><dd><span class="ph">[Kyle's answer]</span></dd></div>
+            <div><dt>Best moment on a dance floor</dt><dd><span class="ph">[Kyle's answer]</span></dd></div>
+          </dl>
+        </article>
+        <article class="who a pop">
+          <h3>Will</h3>
+          <p class="role">Will Pearce &middot; Vocals</p>
+          <p class="bio"><span class="ph">[Will's bio: where he has performed, the songs he is known for and what he brings to the duo.]</span></p>
+          <dl class="qa">
+            <div><dt>First song we sang together</dt><dd><span class="ph">[Will's answer]</span></dd></div>
+            <div><dt>The song that always gets the room</dt><dd><span class="ph">[Will's answer]</span></dd></div>
+            <div><dt>Best moment on a dance floor</dt><dd><span class="ph">[Will's answer]</span></dd></div>
+          </dl>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section listen" id="listen">
+    <div class="wrap listen-grid">
+      <div class="video pop" role="img" aria-label="Placeholder for the first duet video">
+        <div class="play" aria-hidden="true"><svg viewBox="0 0 28 28"><path d="M3 1.5 L26 14 L3 26.5 Z"/></svg></div>
+        <p>First duet video coming soon</p>
+      </div>
+      <div class="listen-copy">
+        <p class="kicker">Listen</p>
+        <h2>Hear us <em>sing.</em></h2>
+        <p>A few of the songs we love singing together.</p>
+        <ul class="songs">
+          <li><span class="ph">[Song title &middot; Artist]</span></li>
+          <li><span class="ph">[Song title &middot; Artist]</span></li>
+          <li><span class="ph">[Song title &middot; Artist]</span></li>
+          <li><span class="ph">[Song title &middot; Artist]</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section words" id="words">
+    <div class="wrap">
+      <figure class="words-in" style="margin:0">
+        <blockquote><span class="ph">A guest's words about the night go here, two or three warm sentences.</span></blockquote>
+        <figcaption><span class="ph">[Name &middot; Wedding &middot; Month Year]</span></figcaption>
+        <p class="fine" style="margin-top:22px"><span class="ph">[Placeholder until the first reviews arrive.]</span></p>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section" id="hello">
+    <div class="wrap hello-grid">
+      <div class="hello-info">
+        <p class="kicker">Say hello</p>
+        <h2>Tell us about <em>your day.</em></h2>
+        <p class="lead">Share the date, the room and the mood you are after, and we will come back to you with availability and a quote.</p>
+        <dl class="contact">
+          <div><dt>Email</dt><dd><span class="ph">[Email address]</span></dd></div>
+          <div><dt>Phone</dt><dd><span class="ph">[Phone number]</span></dd></div>
+          <div><dt>Instagram</dt><dd><span class="ph">[Instagram handle]</span></dd></div>
+        </dl>
+      </div>
+      <div class="form-card pop">
+        <form id="enquiry" novalidate>
+          <div class="row2">
+            <div class="field"><label for="f-name">Your name</label><input id="f-name" name="name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" autocomplete="email" required></div>
+          </div>
+          <div class="row2">
+            <div class="field"><label for="f-date">The date</label><input id="f-date" name="date" type="date"></div>
+            <div class="field">
+              <label for="f-type">What are you celebrating?</label>
+              <select id="f-type" name="type">
+                <option>A wedding</option><option>An engagement</option><option>A party</option><option>A work evening</option><option>A festival or venue</option><option>Something else</option>
+              </select>
+            </div>
+          </div>
+          <div class="field"><label for="f-place">Where is it?</label><input id="f-place" name="place" type="text"></div>
+          <div class="field"><label for="f-msg">Tell us about it</label><textarea id="f-msg" name="message"></textarea></div>
+          <div class="form-foot">
+            <button class="btn btn-solid" type="submit">Send it over</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p class="big-name">Wilson <em>&amp;</em> Pearce</p>
+    <div class="footer-row">
+      <nav class="footer-links" aria-label="Footer">
+        <a href="#evening">The night</a><a href="#us">Us</a><a href="#listen">Listen</a><a href="#hello">Say hello</a>
+      </nav>
+      <p class="legal">&copy; 2026 Wilson and Pearce Entertainment</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.querySelector('.menu-btn');
+    var menu = document.getElementById('menu');
+    btn.addEventListener('click', function () {
+      var open = menu.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+    menu.addEventListener('click', function (e) {
+      if (e.target.closest('a')) { menu.classList.remove('open'); btn.setAttribute('aria-expanded', 'false'); }
+    });
+    var form = document.getElementById('enquiry');
+    var status = document.getElementById('form-status');
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!form.checkValidity()) { form.reportValidity(); return; }
+      status.textContent = 'This is a design preview, so nothing was sent. Once the site is live, enquiries will go to Kyle and Will.';
+    });
+  })();
+</script>
+
+</body>
+</html>
