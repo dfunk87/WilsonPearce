@@ -2,11 +2,16 @@
 
 Website for the live vocal duo Wilson and Pearce Entertainment (Kyle Wilson and Will Pearce).
 
-Plain static site: `index.html` plus `kyle.jpg`. No build step.
+Plain static site, no build step:
+
+- `index.html` main page
+- `kyle.html` and `will.html` full bio pages
+- `style.css` shared styling and colours (the palette is the variables at the top)
+- `kyle.jpg` Kyle's photo
 
 ## Editing
-- Text highlighted in pale blue on the page is placeholder copy. Search `class="ph"` in `index.html` to find it.
-- Add Will's photo by replacing the `W` circle (`pic pic-b`) with an `<img>` like the Kyle one.
+- Text highlighted in pale gold on the pages is placeholder copy. Search for `class="ph"` to find it.
+- To add Will's photo, replace the `W` placeholder arch (`arch soon`) in `index.html` and `will.html` with an `<img>` like the Kyle one.
 - The enquiry form is a preview only and sends nothing yet.
 
 ## Hosting
